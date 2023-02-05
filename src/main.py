@@ -1,6 +1,3 @@
 from utils import *
 
-
-
-db = init()
-menu(db)
+menu(*init())
