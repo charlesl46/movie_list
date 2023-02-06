@@ -7,6 +7,8 @@ import time
 from Film import Film
 from DataBase import DataBase
 
+"""Module of utilitaries of the project"""
+
 
 def init() -> DataBase:
     """Une fonction pour initialiser l'accès à l'API de TMBD"""
@@ -32,6 +34,14 @@ def init() -> DataBase:
     return db,filename
 
 def load(filename : str) -> DataBase:
+    """A function to load the db from a file whose name is passed
+
+    Args:
+        filename (str): the name of the file which contains the db
+
+    Returns:
+        DataBase: The DataBase object which will contain the content of the file
+    """
     db = DataBase()
     db.load_movie_info(filename)
     return db
@@ -89,19 +99,4 @@ def menu(db : DataBase, filename : str) -> None:
         
 
 
-def retrieve_movie_info(titre : str):
-    """Une fonction pour récupérer les infos d'un film"""
-    movie = Movie()
-    search = movie.search(titre)
-    if len(search) != 0:
-        title = search[0].title
-        date = search[0].release_date
-        overview = search[0].overview
-        poster_path = search[0].poster_path
-        vote_average = round(search[0].vote_average)
-        the_movie = Film(title,date,overview,poster_path,vote_average)
-        return the_movie,True
-    else:
-        # le film vide
-        return Film.empty(),False
 

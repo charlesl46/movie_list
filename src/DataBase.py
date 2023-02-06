@@ -1,9 +1,12 @@
+"""A module to modelize a Movie DataBase"""
+
+from tmdbv3api import TMDb, Movie
 from Film import Film
-import utils as ut
 from tqdm import tqdm
 import random
 
 class DataBase:
+    """Une classe permettant de gérer une base de données de Classes Film"""
     def __init__(self) -> None:
         movie_list = {}
         self._movie_list = movie_list
@@ -12,6 +15,12 @@ class DataBase:
 
     
     def vider(self,filename : str) -> None:
+        """Une fonction permettant de vider la base de données
+
+        Args:
+            filename (str): le nom du fichier qui contient la base de données
+        """
+
         file = open(filename, 'w').close()
         self._movie_list.clear()
         self._length = 0
@@ -91,7 +100,7 @@ class DataBase:
 
 
     def ajouter_Titre(self,titre : str, filename : str, addToFile : bool) -> None:
-        movie,found = ut.retrieve_movie_info(titre)
+        movie,found = retrieve_movie_info(titre)
         if found:
             self.ajouter_Film(movie,filename,addToFile = addToFile)
         else:
@@ -116,3 +125,18 @@ class DataBase:
         print(self._movie_list[id].info)
 
 
+def retrieve_movie_info(titre : str):
+    """Une fonction pour récupérer les infos d'un film"""
+    movie = Movie()
+    search = movie.search(titre)
+    if len(search) != 0:
+        title = search[0].title
+        date = search[0].release_date
+        overview = search[0].overview
+        poster_path = search[0].poster_path
+        vote_average = round(search[0].vote_average)
+        the_movie = Film(title,date,overview,poster_path,vote_average)
+        return the_movie,True
+    else:
+        # le film vide
+        return Film.empty(),False

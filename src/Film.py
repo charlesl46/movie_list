@@ -3,6 +3,8 @@ import urllib.request
 
 class Film:
     """ Une classe pour manipuler les films, contenant leur titre, leur résumé, l'url de leur poster et la note moyenne"""
+    
+    
     def __init__(self,title : str,date : str,overview : str,poster_path : str,vote_average : str) -> None:
         """Le constructeur de la classe Film"""
         self._title = title
