@@ -2,11 +2,11 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="DataBase module" href="DataBase.html" /><link rel="prev" title="Welcome to test’s documentation!" href="index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="DataBase module" href="DataBase.html" /><link rel="prev" title="PyMWL’s documentation" href="index.html" />
 
-    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>src - A python movie watchlist 1.0.0 documentation</title>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>src - PyMWL 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -16,20 +16,29 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
+    --color-code-background: #eeffcc;
   --color-code-foreground: black;
+  --color-brand-primary: black;
+  --color-brand-content: black;
+  --color-admonition-background: orange;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
       }
     }
@@ -123,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">A python movie watchlist 1.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">PyMWL 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,8 +154,11 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo_light.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo_dark.png" alt="Dark Logo"/>
+  </div>
   
-  <span class="sidebar-brand-text">A python movie watchlist 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -159,8 +171,8 @@
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">src</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Film.html">Film module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WatchList.html">WatchList module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
 </li>
 </ul>
@@ -203,43 +215,44 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="DataBase.html">DataBase module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="DataBase.html#DataBase.DataBase"><code class="docutils literal notranslate"><span class="pre">DataBase</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.afficher"><code class="docutils literal notranslate"><span class="pre">DataBase.afficher()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.afficher_informations_Film"><code class="docutils literal notranslate"><span class="pre">DataBase.afficher_informations_Film()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.ajouter_Film"><code class="docutils literal notranslate"><span class="pre">DataBase.ajouter_Film()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.ajouter_Titre"><code class="docutils literal notranslate"><span class="pre">DataBase.ajouter_Titre()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.add_film"><code class="docutils literal notranslate"><span class="pre">DataBase.add_film()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.empty"><code class="docutils literal notranslate"><span class="pre">DataBase.empty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.is_empty"><code class="docutils literal notranslate"><span class="pre">DataBase.is_empty()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.load_movie_info"><code class="docutils literal notranslate"><span class="pre">DataBase.load_movie_info()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.retirer"><code class="docutils literal notranslate"><span class="pre">DataBase.retirer()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.sugg_Aleatoire"><code class="docutils literal notranslate"><span class="pre">DataBase.sugg_Aleatoire</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.vider"><code class="docutils literal notranslate"><span class="pre">DataBase.vider()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.random_suggestion"><code class="docutils literal notranslate"><span class="pre">DataBase.random_suggestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.remove"><code class="docutils literal notranslate"><span class="pre">DataBase.remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.retrieve_film_info"><code class="docutils literal notranslate"><span class="pre">DataBase.retrieve_film_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.show"><code class="docutils literal notranslate"><span class="pre">DataBase.show()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.html#DataBase.DataBase.show_info_film"><code class="docutils literal notranslate"><span class="pre">DataBase.show_info_film()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="DataBase.html#DataBase.retrieve_movie_info"><code class="docutils literal notranslate"><span class="pre">retrieve_movie_info()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Film.html">Film module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Film.html#Film.Film"><code class="docutils literal notranslate"><span class="pre">Film</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.definirDate"><code class="docutils literal notranslate"><span class="pre">Film.definirDate()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.definirOverview"><code class="docutils literal notranslate"><span class="pre">Film.definirOverview()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.definirTitre"><code class="docutils literal notranslate"><span class="pre">Film.definirTitre()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.definirVote"><code class="docutils literal notranslate"><span class="pre">Film.definirVote()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.download_poster"><code class="docutils literal notranslate"><span class="pre">Film.download_poster()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.empty"><code class="docutils literal notranslate"><span class="pre">Film.empty()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.info"><code class="docutils literal notranslate"><span class="pre">Film.info</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.obtenirDate"><code class="docutils literal notranslate"><span class="pre">Film.obtenirDate</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.obtenirOverview"><code class="docutils literal notranslate"><span class="pre">Film.obtenirOverview</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.obtenirTitre"><code class="docutils literal notranslate"><span class="pre">Film.obtenirTitre</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.obtenirVote"><code class="docutils literal notranslate"><span class="pre">Film.obtenirVote</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.get_date"><code class="docutils literal notranslate"><span class="pre">Film.get_date</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.get_info"><code class="docutils literal notranslate"><span class="pre">Film.get_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.get_overview"><code class="docutils literal notranslate"><span class="pre">Film.get_overview</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.get_title"><code class="docutils literal notranslate"><span class="pre">Film.get_title</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.get_vote"><code class="docutils literal notranslate"><span class="pre">Film.get_vote</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.set_date"><code class="docutils literal notranslate"><span class="pre">Film.set_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.set_overview"><code class="docutils literal notranslate"><span class="pre">Film.set_overview()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.set_title"><code class="docutils literal notranslate"><span class="pre">Film.set_title()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Film.html#Film.Film.set_vote"><code class="docutils literal notranslate"><span class="pre">Film.set_vote()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WatchList.html">WatchList module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="WatchList.html#WatchList.WatchList"><code class="docutils literal notranslate"><span class="pre">WatchList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="WatchList.html#WatchList.WatchList.menu"><code class="docutils literal notranslate"><span class="pre">WatchList.menu()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">utils module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#utils.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#utils.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#utils.menu"><code class="docutils literal notranslate"><span class="pre">menu()</span></code></a></li>
-</ul>
-</li>
 </ul>
 </div>
 </section>
@@ -281,7 +294,14 @@
             
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/charlesl46" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
           </div>
         </div>
         
@@ -294,6 +314,9 @@
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>

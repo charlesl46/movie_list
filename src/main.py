@@ -1,5 +1,8 @@
 """Main module of the project"""
 
-from utils import *
+from WatchList import WatchList
 
-menu(*init())
+if __name__ == "__main__":
+    wl = WatchList()
+    wl.menu()
+

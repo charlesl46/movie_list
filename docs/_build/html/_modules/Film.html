@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Film - test 1 documentation</title>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Film - PyMWL 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -15,20 +15,29 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
+    --color-code-background: #eeffcc;
   --color-code-foreground: black;
+  --color-brand-primary: black;
+  --color-brand-content: black;
+  --color-admonition-background: orange;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
       }
     }
@@ -122,7 +131,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">test 1 documentation</div></a>
+      <a href="../index.html"><div class="brand">PyMWL 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,8 +153,11 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/logo_light.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logo_dark.png" alt="Dark Logo"/>
+  </div>
   
-  <span class="sidebar-brand-text">test 1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -158,8 +170,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../DataBase.html">DataBase module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Film.html">Film module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../WatchList.html">WatchList module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../main.html">main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../utils.html">utils module</a></li>
 </ul>
 </li>
 </ul>
@@ -200,15 +212,21 @@
 
 
 <div class="viewcode-block" id="Film"><a class="viewcode-back" href="../Film.html#Film.Film">[docs]</a><span class="k">class</span> <span class="nc">Film</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Une classe pour manipuler les films, contenant leur titre, leur résumé, l&#39;url de leur poster et la note moyenne&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; A class to manipulate films, including their title, date, overview, their poster url and their average note by public&quot;&quot;&quot;</span>
     
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">title</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">date</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">overview</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">poster_path</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">vote_average</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Le constructeur de la classe Film&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to initialize a Film object</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            title (str): the title</span>
+<span class="sd">            date (str): the date</span>
+<span class="sd">            overview (str): the overview</span>
+<span class="sd">            poster_path (str): the poster path</span>
+<span class="sd">            vote_average (str): their average note</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_title</span> <span class="o">=</span> <span class="n">title</span>
-        <span class="c1">#self.genres = genres</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_date</span> <span class="o">=</span> <span class="n">date</span>
-        <span class="c1">#self.origin = origin</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_overview</span> <span class="o">=</span> <span class="n">overview</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_poster_path</span> <span class="o">=</span> <span class="n">poster_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_vote_average</span> <span class="o">=</span> <span class="n">vote_average</span>
@@ -217,55 +235,101 @@
 
 <div class="viewcode-block" id="Film.empty"><a class="viewcode-back" href="../Film.html#Film.Film.empty">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Le constructeur du film vide&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to init the empty film&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Film</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Film.definirTitre"><a class="viewcode-back" href="../Film.html#Film.Film.definirTitre">[docs]</a>    <span class="k">def</span> <span class="nf">definirTitre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">title</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Film.set_title"><a class="viewcode-back" href="../Film.html#Film.Film.set_title">[docs]</a>    <span class="k">def</span> <span class="nf">set_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">title</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to set the title of a Film</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            title (str): the title</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_title</span> <span class="o">=</span> <span class="n">title</span></div>
     <span class="k">pass</span>
 
 
-<div class="viewcode-block" id="Film.definirDate"><a class="viewcode-back" href="../Film.html#Film.Film.definirDate">[docs]</a>    <span class="k">def</span> <span class="nf">definirDate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Film.set_date"><a class="viewcode-back" href="../Film.html#Film.Film.set_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to set the date of a Film</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            date (str): the date</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_date</span> <span class="o">=</span> <span class="n">date</span></div>
     <span class="k">pass</span>
 
 
-<div class="viewcode-block" id="Film.definirOverview"><a class="viewcode-back" href="../Film.html#Film.Film.definirOverview">[docs]</a>    <span class="k">def</span> <span class="nf">definirOverview</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">over</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Film.set_overview"><a class="viewcode-back" href="../Film.html#Film.Film.set_overview">[docs]</a>    <span class="k">def</span> <span class="nf">set_overview</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">over</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to set the overview of a Film</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            over (str): the overview</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_overview</span> <span class="o">=</span> <span class="n">over</span></div>
     <span class="k">pass</span>
 
-<div class="viewcode-block" id="Film.definirVote"><a class="viewcode-back" href="../Film.html#Film.Film.definirVote">[docs]</a>    <span class="k">def</span> <span class="nf">definirVote</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">vote</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Film.set_vote"><a class="viewcode-back" href="../Film.html#Film.Film.set_vote">[docs]</a>    <span class="k">def</span> <span class="nf">set_vote</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">vote</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to set the average note of a Film</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vote (str): the average note</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_vote_average</span> <span class="o">=</span> <span class="n">vote</span></div>
     <span class="k">pass</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">obtenirTitre</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to get the title of a Film</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: the title</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_title</span>
 
     
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">obtenirDate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_date</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to get the date of a Film</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: the date</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">obtenirVote</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_vote</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to get the average note of a Film</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: the average note</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vote_average</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">obtenirOverview</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_overview</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to get the overview of a Film</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: the overview</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_overview</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;#&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirTitre</span><span class="si">}</span><span class="s1"> &lt;#&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;&gt; Sorti en : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirDate</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;&gt; Aimé à </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirVote</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s1"> %</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;&gt; Résumé : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirOverview</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to get a summary of all the info of the Film</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: the summary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirTitre</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> Sorti en : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirDate</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> Aimé à </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirVote</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s1"> %</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> Résumé : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">obtenirOverview</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Film.download_poster"><a class="viewcode-back" href="../Film.html#Film.Film.download_poster">[docs]</a>    <span class="k">def</span> <span class="nf">download_poster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
         <span class="k">try</span><span class="p">:</span>
             <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;posters/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">_poster&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -295,7 +359,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, lulu
+                Copyright &#169; 2023, L.E.Charles
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -303,7 +367,14 @@
             
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/charlesl46" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
           </div>
         </div>
         
@@ -316,6 +387,9 @@
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>

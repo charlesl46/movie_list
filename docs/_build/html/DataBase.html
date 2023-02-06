@@ -2,11 +2,11 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Film module" href="Film.html" /><link rel="prev" title="src" href="modules.html" />
 
-    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>DataBase module - A python movie watchlist 1.0.0 documentation</title>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>DataBase module - PyMWL 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -16,20 +16,29 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
+    --color-code-background: #eeffcc;
   --color-code-foreground: black;
+  --color-brand-primary: black;
+  --color-brand-content: black;
+  --color-admonition-background: orange;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #FFBF00;
+  --color-brand-content: #FFBF00;
+  --color-admonition-background: orange;
   
       }
     }
@@ -123,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">A python movie watchlist 1.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">PyMWL 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,8 +154,11 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo_light.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo_dark.png" alt="Dark Logo"/>
+  </div>
   
-  <span class="sidebar-brand-text">A python movie watchlist 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -159,8 +171,8 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">src</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">DataBase module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Film.html">Film module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WatchList.html">WatchList module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
 </li>
 </ul>
@@ -199,64 +211,115 @@
         <article role="main">
           <section id="module-DataBase">
 <span id="database-module"></span><h1>DataBase module<a class="headerlink" href="#module-DataBase" title="Permalink to this heading">#</a></h1>
-<p>A module to modelize a Movie DataBase</p>
+<p>A module to manage a DataBase class</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="DataBase.DataBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataBase.</span></span><span class="sig-name descname"><span class="pre">DataBase</span></span><a class="reference internal" href="_modules/DataBase.html#DataBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataBase.</span></span><span class="sig-name descname"><span class="pre">DataBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Une classe permettant de gérer une base de données de Classes Film</p>
+<p>A class designed to manage Film Objects</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.afficher">
-<span class="sig-name descname"><span class="pre">afficher</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.afficher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.afficher" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.afficher_informations_Film">
-<span class="sig-name descname"><span class="pre">afficher_informations_Film</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.afficher_informations_Film"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.afficher_informations_Film" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.ajouter_Film">
-<span class="sig-name descname"><span class="pre">ajouter_Film</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">film</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Film.html#Film.Film" title="Film.Film"><span class="pre">Film</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addToFile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.ajouter_Film"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.ajouter_Film" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.ajouter_Titre">
-<span class="sig-name descname"><span class="pre">ajouter_Titre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">titre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addToFile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.ajouter_Titre"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.ajouter_Titre" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.load_movie_info">
-<span class="sig-name descname"><span class="pre">load_movie_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.load_movie_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.load_movie_info" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.retirer">
-<span class="sig-name descname"><span class="pre">retirer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.retirer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.retirer" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="DataBase.DataBase.sugg_Aleatoire">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sugg_Aleatoire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="Film.html#Film.Film" title="Film.Film"><span class="pre">Film</span></a></em><a class="headerlink" href="#DataBase.DataBase.sugg_Aleatoire" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="DataBase.DataBase.vider">
-<span class="sig-name descname"><span class="pre">vider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.vider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.vider" title="Permalink to this definition">#</a></dt>
-<dd><p>Une fonction permettant de vider la base de données</p>
+<dt class="sig sig-object py" id="DataBase.DataBase.add_film">
+<span class="sig-name descname"><span class="pre">add_film</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">film</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="Film.html#Film.Film" title="Film.Film"><span class="pre">Film</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.add_film"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.add_film" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to add a film to the db, either by title or by Film object directly</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – le nom du fichier qui contient la base de données</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the title to add. Defaults to None.</p></li>
+<li><p><strong>film</strong> (<a class="reference internal" href="Film.html#Film.Film" title="Film.Film"><em>Film</em></a><em>, </em><em>optional</em>) – the Film to add. Defaults to None.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.empty">
+<span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.empty" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to empty the db</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="DataBase.retrieve_movie_info">
-<span class="sig-prename descclassname"><span class="pre">DataBase.</span></span><span class="sig-name descname"><span class="pre">retrieve_movie_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">titre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#retrieve_movie_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.retrieve_movie_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Une fonction pour récupérer les infos d’un film</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.is_empty">
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.is_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.is_empty" title="Permalink to this definition">#</a></dt>
+<dd><p>Method to know if the db is empty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>is the db empty ?</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.load_movie_info">
+<span class="sig-name descname"><span class="pre">load_movie_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.load_movie_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.load_movie_info" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to load movies into the db from a file</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DataBase.DataBase.random_suggestion">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">random_suggestion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="Film.html#Film.Film" title="Film.Film"><span class="pre">Film</span></a></em><a class="headerlink" href="#DataBase.DataBase.random_suggestion" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to give a random suggestion in the db</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the random suggestion</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="Film.html#Film.Film" title="Film.Film">Film</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.remove" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to remove a film from the db, either from its id or from its title</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>_type_</em><em>, </em><em>optional</em>) – the id of the film to remove. Defaults to None.</p></li>
+<li><p><strong>title</strong> (<em>_type_</em><em>, </em><em>optional</em>) – the title of the film to remove. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.retrieve_film_info">
+<span class="sig-name descname"><span class="pre">retrieve_film_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DataBase.html#DataBase.retrieve_film_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.retrieve_film_info" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to retrieve info on a film using tmdb api</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the title of the film</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the film found
+bool: if the film was found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="Film.html#Film.Film" title="Film.Film">Film</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.show" title="Permalink to this definition">#</a></dt>
+<dd><p>A function to show the current state of the db with all the films stored in it</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataBase.DataBase.show_info_film">
+<span class="sig-name descname"><span class="pre">show_info_film</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/DataBase.html#DataBase.show_info_film"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DataBase.DataBase.show_info_film" title="Permalink to this definition">#</a></dt>
+<dd><p>A method to show info about a film</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – the id of the film to give info of</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -298,7 +361,14 @@
             
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/charlesl46" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
           </div>
         </div>
         
@@ -318,17 +388,17 @@
             <ul>
 <li><a class="reference internal" href="#">DataBase module</a><ul>
 <li><a class="reference internal" href="#DataBase.DataBase"><code class="docutils literal notranslate"><span class="pre">DataBase</span></code></a><ul>
-<li><a class="reference internal" href="#DataBase.DataBase.afficher"><code class="docutils literal notranslate"><span class="pre">DataBase.afficher()</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.afficher_informations_Film"><code class="docutils literal notranslate"><span class="pre">DataBase.afficher_informations_Film()</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.ajouter_Film"><code class="docutils literal notranslate"><span class="pre">DataBase.ajouter_Film()</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.ajouter_Titre"><code class="docutils literal notranslate"><span class="pre">DataBase.ajouter_Titre()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.add_film"><code class="docutils literal notranslate"><span class="pre">DataBase.add_film()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.empty"><code class="docutils literal notranslate"><span class="pre">DataBase.empty()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.is_empty"><code class="docutils literal notranslate"><span class="pre">DataBase.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#DataBase.DataBase.load_movie_info"><code class="docutils literal notranslate"><span class="pre">DataBase.load_movie_info()</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.retirer"><code class="docutils literal notranslate"><span class="pre">DataBase.retirer()</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.sugg_Aleatoire"><code class="docutils literal notranslate"><span class="pre">DataBase.sugg_Aleatoire</span></code></a></li>
-<li><a class="reference internal" href="#DataBase.DataBase.vider"><code class="docutils literal notranslate"><span class="pre">DataBase.vider()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.random_suggestion"><code class="docutils literal notranslate"><span class="pre">DataBase.random_suggestion</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.remove"><code class="docutils literal notranslate"><span class="pre">DataBase.remove()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.retrieve_film_info"><code class="docutils literal notranslate"><span class="pre">DataBase.retrieve_film_info()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.show"><code class="docutils literal notranslate"><span class="pre">DataBase.show()</span></code></a></li>
+<li><a class="reference internal" href="#DataBase.DataBase.show_info_film"><code class="docutils literal notranslate"><span class="pre">DataBase.show_info_film()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#DataBase.retrieve_movie_info"><code class="docutils literal notranslate"><span class="pre">retrieve_movie_info()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -341,6 +411,9 @@
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
