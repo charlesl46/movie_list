@@ -167,11 +167,11 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../DataBase.html">DataBase module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Film.html">Film module</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Film.html">Film</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../WatchList.html">WatchList module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../main.html">main</a></li>
 </ul>
 </li>
 </ul>
@@ -264,9 +264,9 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to display main menu of the WatchList&quot;&quot;&quot;</span>
         <span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
 
-        <span class="c1">#self.db.ajouter_Titre(&#39;Les aventures de tintin&#39;,filename=self.filename,addToFile=True)</span>
-        <span class="c1">#for i in tqdm(range(1,10)):</span>
-        <span class="c1">#    self.db.ajouter_Titre(f&#39;Star Wars&#39;,filename=self.filename,addToFile=True)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">ajouter_Titre</span><span class="p">(</span><span class="s1">&#39;Les aventures de tintin&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span><span class="n">addToFile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">ajouter_Titre</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Star Wars&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span><span class="n">addToFile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;#&gt; Welcome to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> movie database &lt;#&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>

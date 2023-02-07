@@ -1,5 +1,5 @@
-DataBase module
-===============
+DataBase
+========
 
 .. automodule:: DataBase
    :members:

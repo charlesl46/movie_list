@@ -112,10 +112,10 @@ class Film:
         Returns:
             str: the summary
         """
-        return(f'{self.obtenirTitre}\n'
-        + f'\t Sorti en : {self.obtenirDate} \n'
-        + f'\t Aimé à {int(self.obtenirVote) * 10} %\n'
-        + f'\t Résumé : {self.obtenirOverview} ')
+        return(f'{self.get_title}\n'
+        + f'\t Sorti en : {self.get_date} \n'
+        + f'\t Aimé à {int(self.get_vote) * 10} %\n'
+        + f'\t Résumé : {self.get_overview} ')
 
 
     def download_poster(self):

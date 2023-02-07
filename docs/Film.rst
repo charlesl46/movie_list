@@ -1,5 +1,5 @@
-Film module
-===========
+Film
+====
 
 .. automodule:: Film
    :members:

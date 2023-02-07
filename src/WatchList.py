@@ -54,9 +54,6 @@ class WatchList:
         """Method to display main menu of the WatchList"""
         finished = False
 
-        #self.db.ajouter_Titre('Les aventures de tintin',filename=self.filename,addToFile=True)
-        #for i in tqdm(range(1,10)):
-        #    self.db.ajouter_Titre(f'Star Wars',filename=self.filename,addToFile=True)
 
         print(f'<#> Welcome to {self.name} movie database <#>\n')
         while not finished:

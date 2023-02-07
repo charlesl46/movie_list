@@ -43,13 +43,11 @@ pygments_dark_style = "monokai"
 html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "black",
-        "color-brand-content": "black",
-        "color-admonition-background": "orange",
+        "color-brand-content": "black"
     },
     "dark_css_variables": {
         "color-brand-primary": "#FFBF00",
-        "color-brand-content": "#FFBF00",
-        "color-admonition-background": "orange",
+        "color-brand-content": "#FFBF00"
     },
     "light_logo": "logo_light.png",
     "dark_logo": "logo_dark.png",
