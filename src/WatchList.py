@@ -3,6 +3,7 @@
 from DataBase import DataBase
 from tmdbv3api import TMDb, Movie
 from tqdm import tqdm
+import time
 import os
 
 
@@ -54,9 +55,10 @@ class WatchList:
         """Method to display main menu of the WatchList"""
         finished = False
 
-
+        self.separator()
         print(f'<#> Welcome to {self.name} movie database <#>\n')
         while not finished:
+            self.separator()
             print('<#> What do you want to do ? <#>\n')
             print('\t - <1> Show current watchlist\n')
             print('\t - <2> Show a film\'s info\n')
@@ -98,5 +100,12 @@ class WatchList:
                     self.db.remove(title = title)
 
         print('</o\> Thank\'s for using! </o\>')
+
+    def separator(self):
+        """A visual separator to make UI cleaner
+        """
+        text = '##########################\n##########################\n'
+        time.sleep(0.5)
+        print(text)
 
     
